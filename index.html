@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+       <h2>Image Gallery</h2>
+    <div class="gallery-wrap">
+        <img src="images/back.png" id="backbtn">
+    
+    <div class="gallery">
+        <div>
+            <span><img src="images/1.jpg" alt="images"></span>
+            <span><img src="images/11.jpg" alt="images"></span>
+            <span><img src="images/3.jpg" alt="images"></span>
+        </div>
+        <div>
+            <span><img src="images/4.jpg" alt="images"></span>
+            <span><img src="images/5.jpg" alt="images"></span>
+            <span><img src="images/6.jpg" alt="images"></span>
+        </div>
+        <div>
+            <span><img src="images/14.jpg" alt="images"></span>
+            <span><img src="images/13.jpg" alt="images"></span>
+            <span><img src="images/9.jpg" alt="images"></span>
+        </div>
+        <div>
+            <span><img src="images/15.jpg" alt="images"></span>
+            <span><img src="images/16.jpg" alt="images"></span>
+            <span><img src="images/17.jpg" alt="images"></span>
+        </div>
+    </div>
+    <img src="images/front.png" id="nextbtn">
+    </div>
+
+
+    <script>
+        let scrollContainer=document.querySelector(".gallery");
+        let backbtn=document.getElementById("backbtn");
+        let nextbtn=document.getElementById("nextbtn");
+
+        scrollContainer.addEventListener("wheel", (evt) =>
+        {
+            evt.preventDefault();
+            scrollContainer.scrollLeft +=evt.deltaY;
+            scrollContainer.style.scrollBehavior ="auto";
+
+        });
+
+        nextbtn.addEventListener("click",()=>
+    {
+        scrollContainer.style.scrollBehaviour ="smooth";
+        scrollContainer.scrollLeft += 900;
+    });
+
+    backbtn.addEventListener("click",()=>
+    {
+        scrollContainer.style.scrollBehaviour ="smooth";
+        scrollContainer.scrollLeft -= 900;
+    });
+
+    </script>
+</body>
+</html>
